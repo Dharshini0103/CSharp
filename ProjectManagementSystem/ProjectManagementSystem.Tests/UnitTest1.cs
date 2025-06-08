@@ -39,9 +39,9 @@ namespace ProjectManagementSystem.Tests
         {
             var task = new entity.Task
             {
-                Task_name = "UI Design",
+                Task_name = "Test Payments",
                 Project_id = 3,     
-                Employee_id = 6,    
+                Employee_id = 4,    
                 Status = "Assigned"
             };
             bool result = repo.CreateTask(task);
@@ -54,8 +54,8 @@ namespace ProjectManagementSystem.Tests
         {
             var searchTask = new entity.Task
             {
-                Project_id = 3,
-                Employee_id = 4
+                Project_id = 6,
+                Employee_id =9 
             };
             var tasks = repo.GetAllTasks(searchTask);
             ClassicAssert.IsNotNull(tasks);

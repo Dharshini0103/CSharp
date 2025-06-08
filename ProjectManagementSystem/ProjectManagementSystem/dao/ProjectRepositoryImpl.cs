@@ -203,12 +203,6 @@ namespace ProjectManagementSystem.dao
                     dr.Close();
                     throw new ProjectNotFoundException($"Project with ID {p.Id} not found.");
                 }
-                dr.Close();
-                cmd = new SqlCommand("DELETE FROM Project WHERE Id = @projectId", con);
-                cmd.Parameters.AddWithValue("@projectId", p.Id);
-                int rows = cmd.ExecuteNonQuery();
-                Console.WriteLine(rows > 0 ? "Project deleted successfully.." : "Failed to delete project..");
-                return rows > 0;
             }
             catch (ProjectNotFoundException pnfe)
             {
